@@ -8,7 +8,8 @@ import {
   FlatList,
   Image,
 } from 'react-native';
-import {Input} from '_components';
+import {Input, Button} from '_components';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const {width} = Dimensions.get('screen');
@@ -16,62 +17,35 @@ const {width} = Dimensions.get('screen');
 const data = [
   {
     imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
+    name: 'Merve Oğuz',
   },
   {
     imageUrl: require('_assets/image/b.jpeg'),
     name: 'Buse Yazılım',
-    date: '08.43',
+  },
+  {
+    imageUrl: require('_assets/image/a.jpeg'),
+    name: 'Zeynep Oğuz',
+  },
+  {
+    imageUrl: require('_assets/image/b.jpeg'),
+    name: 'Ahmet Yazılım',
+  },
+  {
+    imageUrl: require('_assets/image/a.jpeg'),
+    name: 'Selin Oğuz',
+  },
+  {
+    imageUrl: require('_assets/image/b.jpeg'),
+    name: 'Ali Aydın',
   },
   {
     imageUrl: require('_assets/image/a.jpeg'),
     name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
   },
 ];
 const NetworkTab = ({navigation}) => {
-  const item = ({item: {imageUrl, name, date}, index}) => (
+  const item = ({item: {imageUrl, name}, index}) => (
     <View
       style={{
         paddingLeft: '1%',
@@ -86,7 +60,7 @@ const NetworkTab = ({navigation}) => {
           />
           <Text
             style={{
-              width: '60%',
+              width: '50%',
               padding: 15,
               paddingTop: 8,
               fontSize: 15,
@@ -94,18 +68,18 @@ const NetworkTab = ({navigation}) => {
             }}>
             {name}
           </Text>
-          <Text
-            style={{
-              color: '#93a0a8',
-              width: '20%',
-              padding: 15,
-              paddingTop: 8,
-              fontSize: 13,
-              fontWeight: 'bold',
-              textAlign: 'right',
-            }}>
-            {date}
-          </Text>
+          <Button
+            text={'Bağlantı kur'}
+            buttonStyle={{
+              backgroundColor: '#ffffff',
+              borderWidth: 2,
+              borderColor: '#0a66c2',
+              width: width * 0.4,
+              height:40
+            }}
+            titleStyle={{color: '#0a66c2', fontSize:14}}
+            onPress={() => alert('İstek gönderildi')}
+          />
         </View>
       </TouchableOpacity>
     </View>
@@ -113,7 +87,7 @@ const NetworkTab = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Input
-        placeholder={'Mesajlarda ara'}
+        placeholder={'Arama yap'}
         containerStyle={{
           width: width * 0.9,
           height: 60,

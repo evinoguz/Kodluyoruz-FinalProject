@@ -5,9 +5,7 @@ import {Provider} from 'react-redux';
 //import store from './Redux/index';
 
 const App = () => {
-  return (
-          <Navigation />
-  );
+  return <Navigation />;
 };
 
 export {App};

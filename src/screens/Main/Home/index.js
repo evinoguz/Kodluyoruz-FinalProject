@@ -2,6 +2,7 @@ import React from 'react';
 import {
   View,
   Text,
+  TextInput,
   StyleSheet,
   TouchableOpacity,
   Dimensions,
@@ -17,7 +18,14 @@ const data = [
   {
     imageUrl: require('_assets/image/b.jpeg'),
     name: 'Evin Oğuz',
-    date: '15.59',
+  },
+  {
+    imageUrl: require('_assets/image/b.jpeg'),
+    name: 'Buse Yazılım',
+  },
+  {
+    imageUrl: require('_assets/image/a.jpeg'),
+    name: 'Evin Oğuz',
   },
   {
     imageUrl: require('_assets/image/b.jpeg'),
@@ -26,88 +34,65 @@ const data = [
   },
   {
     imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
+    name: 'Sara Oğuz',
     date: '15.59',
   },
   {
     imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
-    date: '08.43',
-  },
-  {
-    imageUrl: require('_assets/image/a.jpeg'),
-    name: 'Evin Oğuz',
-    date: '15.59',
-  },
-  {
-    imageUrl: require('_assets/image/b.jpeg'),
-    name: 'Buse Yazılım',
+    name: 'Ali Yazılım',
     date: '08.43',
   },
 ];
 const HomeTab = ({navigation}) => {
-  const item = ({item: {imageUrl, name, date}, index}) => (
+  const item = ({item: {imageUrl, name}, index}) => (
     <View
       style={{
         paddingLeft: '1%',
         paddingVertical: 14,
         width: width * 1,
       }}>
-      <TouchableOpacity>
-        <View style={{flexDirection: 'row', justifyContent: 'center'}}>
-          <Image
-            style={{width: '11%', height: 40, borderRadius: 70}}
-            source={imageUrl}
-          />
-          <Text
-            style={{
-              width: '60%',
-              padding: 15,
-              paddingTop: 8,
-              fontSize: 15,
-              fontWeight: 'bold',
-            }}>
-            {name}
-          </Text>
-          <Text
-            style={{
-              color: '#93a0a8',
-              width: '20%',
-              padding: 15,
-              paddingTop: 8,
-              fontSize: 13,
-              fontWeight: 'bold',
-              textAlign: 'right',
-            }}>
-            {date}
-          </Text>
-        </View>
-      </TouchableOpacity>
+      <View style={{flexDirection: 'row', justifyContent: 'center'}}>
+        <Image
+          style={{width: '11%', height: 40, borderRadius: 70}}
+          source={imageUrl}
+        />
+        <Text
+          style={{
+            width: '60%',
+            padding: 15,
+            paddingTop: 8,
+            fontSize: 15,
+            fontWeight: 'bold',
+          }}>
+          {name}
+        </Text>
+      </View>
+      <View>
+        <Text
+          style={{
+            color: '#93a0a8',
+            width: '40%',
+            padding: 15,
+            paddingTop: 8,
+            fontSize: 13,
+            fontWeight: 'bold',
+            textAlign: 'right',
+          }}>
+          gönderi paylaştı
+        </Text>
+      </View>
+      <View style={{flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal:10}}>
+        <TouchableOpacity onPress={() => navigation.navigate('Message')}>
+          <AntDesign name={'like2'} color={'#000000'} size={20} />
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={() => navigation.navigate('Message')}>
+          <AntDesign name={'message1'} color={'#000000'} size={20} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Message')}>
+          <AntDesign name={'sharealt'} color={'#000000'} size={20} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
   return (

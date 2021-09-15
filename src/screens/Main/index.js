@@ -39,7 +39,7 @@ const Main = () => {
         <Tab.Screen
           name={'PostTab'}
           component={PostTab}
-          options={{headerTitle: 'Yayınla'}}
+          options={{headerTitle: 'Gönderiyi Paylaş'}}
         />
         <Tab.Screen
           name={'NotificationTab'}
