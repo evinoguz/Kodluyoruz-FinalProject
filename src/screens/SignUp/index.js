@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 import {Button, Input} from '_components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Entypo from 'react-native-vector-icons/Entypo';
-const {width} = Dimensions.get('screen');
-import {connect} from 'react-redux';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const Login = ({navigation}) => {
+const {width} = Dimensions.get('screen');
+
+const SignUp = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View
@@ -42,39 +42,31 @@ const Login = ({navigation}) => {
         secureTextEntry={true}
         icon={<Entypo name={'lock'} color={'#cccccc'} size={24} />}
       />
-      <TouchableOpacity>
-        <Text style={styles.forgotPasswordText}>Şifrenizi mi Unuttunuz?</Text>
-      </TouchableOpacity>
-      <Button
-        text={' Devam Et'}
-        icon={<AntDesign name={'adduser'} color={'#ffffff'} size={20} />}
-        buttonStyle={{backgroundColor: '#0a66c2'}}
-        onPress={() => navigation.navigate('Main')}
+      <Input
+        placeholder={'Şifre Tekrarı'}
+        secureTextEntry={true}
+        icon={<Entypo name={'lock'} color={'#cccccc'} size={24} />}
       />
+
       <Button
-        text={' Üye Ol'}
-        icon={<FontAwesome name={'sign-in'} color={'#0a66c2'} size={20} />}
+        text={' Kaydol'}
+        icon={<FontAwesome name={'sign-in'} color={'#ffffff'} size={20} />}
+        buttonStyle={{backgroundColor: '#0a66c2'}}
+        onPress={() => navigation.navigate('Login')}
+      />
+      <Text style={{color: '#cccccc', marginTop: 20, marginBottom: 20}}>
+        ──────── VEYA ────────
+      </Text>
+      <Button
+        text={' Oturum Aç'}
+        icon={<AntDesign name={'adduser'} color={'#0a66c2'} size={20} />}
         buttonStyle={{
           backgroundColor: '#ffffff',
           borderWidth: 2,
           borderColor: '#0a66c2',
         }}
         titleStyle={{color: '#0a66c2'}}
-        onPress={() => navigation.navigate('SignUp')}
-      />
-      <Text style={{color: '#cccccc', marginTop: 20, marginBottom: 20}}>
-        ──────── VEYA ────────
-      </Text>
-      <Button
-        text={' Google ile oturum açın'}
-        icon={<AntDesign name={'google'} color={'orange'} size={20} />}
-        buttonStyle={{
-          backgroundColor: '#ffffff',
-          borderWidth: 2,
-          borderColor: '#2c2c58',
-        }}
-        titleStyle={{color: '#2c2c58'}}
-        onPress={() => navigation.navigate('Main')}
+        onPress={() => navigation.navigate('Login')}
       />
     </View>
   );
@@ -98,4 +90,4 @@ const styles = StyleSheet.create({
     fontSize: 60,
   },
 });
-export {Login};
+export {SignUp};

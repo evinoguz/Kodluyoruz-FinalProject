@@ -15,6 +15,9 @@
             ],
             "_components": [
                 "./src/components/index"
+            ],
+            "_store": [
+                "./src/store/index"
             ]
         }
     },

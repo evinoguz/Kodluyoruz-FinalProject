@@ -22,6 +22,10 @@ module.exports = {
             rootPathPrefix: '_components',
             rootPathSuffix: 'src/components/index',
           },
+          {
+            rootPathPrefix: '_store',
+            rootPathSuffix: 'src/store/index',
+          },
         ],
       },
     ],

@@ -6,8 +6,9 @@ import {
   Main,
   Login, 
   Message,
-  Splash} from '_screens/';
-import AntDesign from 'react-native-vector-icons/AntDesign';
+  Splash,
+  SignUp,
+} from '_screens/';
 
 const STACK1 = createStackNavigator();
 
@@ -32,11 +33,7 @@ const Navigation = () => {
             headerLeft: () => {
               return null;
             },
-            headerRight: () => (
-              <TouchableOpacity>
-                <AntDesign name={'adduser'} color={'#0a66c2'} size={30} />
-              </TouchableOpacity>
-            ),
+           
           }}
         />
         <STACK1.Screen
@@ -45,7 +42,12 @@ const Navigation = () => {
           component={Main}
         />
         <STACK1.Screen
-          options={{headerTitle:'Mesajlar'}}
+          options={{headerTitle: 'Kaydol'}}
+          name={'SignUp'}
+          component={SignUp}
+        />
+        <STACK1.Screen
+          options={{headerTitle: 'Mesajlar'}}
           name={'Message'}
           component={Message}
         />
