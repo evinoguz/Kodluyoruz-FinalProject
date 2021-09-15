@@ -2,7 +2,11 @@ import React, {useState, useEffect} from 'react';
 import {View, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Main,Login, Splash} from '_screens/';
+import {
+  Main,
+  Login, 
+  Message,
+  Splash} from '_screens/';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const STACK1 = createStackNavigator();
@@ -39,6 +43,11 @@ const Navigation = () => {
           options={{headerShown: false}}
           name={'Main'}
           component={Main}
+        />
+        <STACK1.Screen
+          options={{headerTitle:'Mesajlar'}}
+          name={'Message'}
+          component={Message}
         />
       </STACK1.Navigator>
     </NavigationContainer>

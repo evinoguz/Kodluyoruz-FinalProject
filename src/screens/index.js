@@ -1,6 +1,8 @@
 export * from './Main';
 export * from './Splash';
 export * from './Login';
+export * from './Message';
+
 
 export * from './Main/Home';
 export * from './Main/Network';

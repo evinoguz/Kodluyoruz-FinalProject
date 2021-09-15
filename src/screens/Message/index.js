@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Dimensions,
   FlatList,
-  Image,
+  Image
 } from 'react-native';
 import {Input} from '_components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -70,7 +70,7 @@ const data = [
     date: '08.43',
   },
 ];
-const NetworkTab = ({navigation}) => {
+const Message = ({navigation}) => {
   const item = ({item: {imageUrl, name, date}, index}) => (
     <View
       style={{
@@ -136,6 +136,7 @@ const NetworkTab = ({navigation}) => {
             }}></View>
         )}
       />
+     
     </View>
   );
 };
@@ -146,5 +147,6 @@ const styles = StyleSheet.create({
     width: width * 1,
     backgroundColor: '#ffffff',
   },
+  
 });
-export {NetworkTab};
+export {Message};

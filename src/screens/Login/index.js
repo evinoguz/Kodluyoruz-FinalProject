@@ -51,7 +51,7 @@ const Login = ({navigation}) => {
         onPress={() => navigation.navigate('Main')}
       />
       <Text style={{color: '#cccccc', marginTop: 20, marginBottom: 20}}>
-        {' '}
+        
         ──────── VEYA ────────
       </Text>
       <Button

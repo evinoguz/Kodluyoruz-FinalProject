@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Dimensions, Image} from 'react-native';
 import {Input as RNEInput} from 'react-native-elements';
 const {width} = Dimensions.get('screen');
+import {Button} from '_components';
 
 const Card = props => {
   const {
@@ -62,23 +63,32 @@ const Card = props => {
             {name}
           </Text>
         </View>
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <View style={{flex: 1, flexDirection: 'row', alignItems: 'center'}}>
           <Text
             style={{
               color: '#2c2c58',
-              paddingTop: '2%',
+              paddingTop: '1%',
               fontSize: 16,
-              paddingRight: '50%',
             }}>
             {content}
           </Text>
+          <Button
+            text={'Başvur'}
+            buttonStyle={{
+              backgroundColor: 'white',
+              width: width * 0.3,
+              marginBottom: '20%',
+              paddingTop: '15%',
+            }}
+            titleStyle={{color: color, fontSize: 18}}
+            onPress={() => alert("'"+content+"'" +" ilanına başvuruldu.")}
+          />
         </View>
       </View>
     </TouchableOpacity>
   );
 };
 Card.defaultProps = {
-  onPress: () => alert('kampanyasının detayları'),
   style: {},
   textStyle: {},
   isActivite: false,

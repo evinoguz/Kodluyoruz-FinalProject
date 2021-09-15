@@ -130,6 +130,7 @@ const style = StyleSheet.create({
   tabText: {
     textAlign: 'center',
     fontSize: 10,
+    marginTop: '-15%',
   },
 });
 export {TabBar};

@@ -29,14 +29,28 @@ const Main = () => {
         <Tab.Screen
           name={'HomeTab'}
           component={HomeTab}
-          options={{
-            headerTitle: 'Anasayfa',
-          }}
+          options={{headerShown: false}}
         />
-        <Tab.Screen name={'NetworkTab'} component={NetworkTab} />
-        <Tab.Screen name={'PostTab'} component={PostTab} />
-        <Tab.Screen name={'NotificationTab'} component={NotificationTab} />
-        <Tab.Screen name={'JobPostingsTab'} component={JobPostingsTab} />
+        <Tab.Screen
+          name={'NetworkTab'}
+          component={NetworkTab}
+          options={{headerTitle: 'Ağım'}}
+        />
+        <Tab.Screen
+          name={'PostTab'}
+          component={PostTab}
+          options={{headerTitle: 'Yayınla'}}
+        />
+        <Tab.Screen
+          name={'NotificationTab'}
+          component={NotificationTab}
+          options={{headerTitle: 'Bildirimler'}}
+        />
+        <Tab.Screen
+          name={'JobPostingsTab'}
+          component={JobPostingsTab}
+          options={{headerTitle: 'İş İlanları'}}
+        />
       </Tab.Navigator>
     </View>
   );
